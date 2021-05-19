@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Todo App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    
+    <div id="app">
+
+        <div class="logo">
+            <img :src="logo" alt="">
+        </div>
+
+        <div id="add_task">
+            <input v-model="newTask" placeholder="Add your new task!" @keyup.13="addTask">
+            <button @click="addTask">Add Task</button>
+        </div>
+
+        <div class="tasks" v-if="tasks.length > 0">
+            <div class="task" v-for="(task, index) in tasks">
+                {{task}} <i class="fas fa-times-circle" @click="removeTask(index)"></i>
+            </div>
+        </div>
+        <div class="no_tasks" v-else>
+            <p>Nothing to do</p>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
