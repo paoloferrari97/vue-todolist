@@ -8,13 +8,17 @@ const app = new Vue({
             "Learn CSS",
             "Learn JS"
         ],
-        newTask: ""
+        newTask: "",
+        completeds: [],
+        trasheds: []
     },
 
     methods: {
         addTask() {
-            if (this.newTask !== "" && !this.tasks.includes(this.newTask)) {
+            if (this.newTask !== "" && !this.tasks.includes(this.newTask) && this.newTask.length > 2) {
                 this.tasks.push(this.newTask);
+                this.newTask = "";
+            } else {
                 this.newTask = "";
             }
         },
