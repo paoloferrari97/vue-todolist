@@ -44,7 +44,8 @@
                 <h3>Completed</h3>
                 <div class="completeds">
                     <div class="task" v-for="(completed, index) in completeds">
-                        {{completed}}
+                        <p>{{completed}}</p>
+                        <span><i class="fas fa-undo" @click="todoTaskCompleted(index)"></i></span>
                     </div>
                 </div>
             </div>
@@ -53,7 +54,8 @@
                 <h3>Trashed</h3>
                 <div class="trasheds">
                     <div class="task" v-for="(trashed, index) in trasheds">
-                        {{trashed}}
+                        <p>{{trashed}}</p>
+                        <span><i class="fas fa-trash-restore" @click="todoTaskTrashed(index)"></i></span>
                     </div>
                 </div>
             </div>

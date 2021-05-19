@@ -33,6 +33,14 @@ const app = new Vue({
         trashedsTask(index) {
             this.trasheds.push(this.tasks[index]);
             this.tasks.splice(index, 1);
+        },
+        todoTaskCompleted(index) {
+            this.tasks.push(this.completeds[index]);
+            this.completeds.splice(index, 1);
+        },
+        todoTaskTrashed(index) {
+            this.tasks.push(this.trasheds[index]);
+            this.trasheds.splice(index, 1);
         }
     }
 });
