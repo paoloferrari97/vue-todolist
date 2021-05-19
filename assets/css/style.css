@@ -77,8 +77,22 @@ body {
   margin: 10px 0;
 }
 
+.container_1 > div > div > span {
+  display: flex;
+}
+
 .container_1 > div > div > span > i {
   font-size: 20px;
+  margin-left: 5px;
+}
+
+.container_1 > div > div > input {
+  background-color: #d3d3d3;
+  border: 0;
+}
+
+.container_1 > div > div > p {
+  overflow-y: auto;
 }
 
 .task {

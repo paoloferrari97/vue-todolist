@@ -47,6 +47,9 @@ const app = new Vue({
             if (YoN == true) {
                 this.trasheds = [];
             }
+        },
+        alert(task) {
+            alert(`Task updated! The new task is: ${task}`);
         }
     }
 });

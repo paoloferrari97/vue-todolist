@@ -28,7 +28,7 @@
                 <h3>Todo List</h3>
                 <div class="tasks" v-if="tasks.length > 0">
                     <div class="task" v-for="(task, index) in tasks">
-                        <p contenteditable="true">{{task}}</p> <!-- <i class="fas fa-times-circle" @click="removeTask(index)"></i> -->
+                        <input type="text" v-model="tasks[index]" v-text="task" @change="alert(task)"> <!-- <i class="fas fa-times-circle" @click="removeTask(index)"></i> -->
                         <span>
                             <i class="fas fa-check-circle" @click="completedTask(index)"></i>
                             <i class="fas fa-trash" @click="trashedsTask(index)"></i>
