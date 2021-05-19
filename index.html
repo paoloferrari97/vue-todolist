@@ -51,7 +51,7 @@
             </div>
 
             <div class="container_1" v-if="trasheds.length > 0">
-                <h3>Trashed</h3>
+                <h3>Trashed (<span @click="clearTrash()">Empty bin</span>)</h3>
                 <div class="trasheds">
                     <div class="task" v-for="(trashed, index) in trasheds">
                         <p>{{trashed}}</p>

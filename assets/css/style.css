@@ -60,6 +60,12 @@ body {
   padding: 20px;
 }
 
+.container_1 > h3 > span {
+  text-decoration: underline;
+  color: red;
+  cursor: pointer;
+}
+
 .container_1 > div {
   margin: 0 20px 20px 20px;
   padding: 20px;

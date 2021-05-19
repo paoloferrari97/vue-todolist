@@ -22,10 +22,10 @@ const app = new Vue({
                 this.newTask = "";
             }
         },
-        removeTask(index) {
+        /* removeTask(index) {
             //.pop funziona sull'ultimo elemento dell'array, quindi non mi va bene qua
             this.tasks.splice(index, 1); //a partire da posizione index mi toglie 1 elemento
-        },
+        }, */
         completedTask(index) {
             this.completeds.push(this.tasks[index]);
             this.tasks.splice(index, 1);
@@ -41,6 +41,12 @@ const app = new Vue({
         todoTaskTrashed(index) {
             this.tasks.push(this.trasheds[index]);
             this.trasheds.splice(index, 1);
+        },
+        clearTrash() {
+            var YoN = confirm("Do you want to delete all the elements of the trash?");
+            if (YoN == true) {
+                this.trasheds = [];
+            }
         }
     }
 });
