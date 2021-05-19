@@ -28,7 +28,11 @@
                 <h3>Todo List</h3>
                 <div class="tasks" v-if="tasks.length > 0">
                     <div class="task" v-for="(task, index) in tasks">
-                        {{task}} <i class="fas fa-times-circle" @click="removeTask(index)"></i>
+                        <p contenteditable="true">{{task}}</p> <!-- <i class="fas fa-times-circle" @click="removeTask(index)"></i> -->
+                        <span>
+                            <i class="fas fa-check-circle" @click="completedTask(index)"></i>
+                            <i class="fas fa-trash" @click="trashedsTask(index)"></i>
+                        </span>
                     </div>
                 </div>
                 <div class="no_tasks" v-else>
@@ -39,7 +43,7 @@
             <div class="container_1" v-if="completeds.length > 0">
                 <h3>Completed</h3>
                 <div class="completeds">
-                    <div class="completed" v-for="(completed, index) in completeds">
+                    <div class="task" v-for="(completed, index) in completeds">
                         {{completed}}
                     </div>
                 </div>
@@ -48,7 +52,7 @@
             <div class="container_1" v-if="trasheds.length > 0">
                 <h3>Trashed</h3>
                 <div class="trasheds">
-                    <div class="trashed" v-for="(trashed, index) in trasheds">
+                    <div class="task" v-for="(trashed, index) in trasheds">
                         {{trashed}}
                     </div>
                 </div>

@@ -25,6 +25,14 @@ const app = new Vue({
         removeTask(index) {
             //.pop funziona sull'ultimo elemento dell'array, quindi non mi va bene qua
             this.tasks.splice(index, 1); //a partire da posizione index mi toglie 1 elemento
+        },
+        completedTask(index) {
+            this.completeds.push(this.tasks[index]);
+            this.tasks.splice(index, 1);
+        },
+        trashedsTask(index) {
+            this.trasheds.push(this.tasks[index]);
+            this.tasks.splice(index, 1);
         }
     }
 });
